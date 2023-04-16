@@ -27,7 +27,6 @@ const ImageDepthMap = ({
         vth={verticalThreshold}
         hth={horizontalThreshold}
         useGravity
-        multiplier={3}
         respondTo={respondTo || 'mouseMove'}
         reverseMotion={reverseMotion}
       />}
