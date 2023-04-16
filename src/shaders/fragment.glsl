@@ -23,8 +23,8 @@ void main() {
   vUv.y = 1. - vUv.y;
   vec4 tex1 = texture2D(image1,mirrored(vUv));
   float depth = tex1.r;
-  float displacementx = vUv.x + (depth - 0.2) * mouse.x / threshold.x;
-  float displacementy = vUv.y + (depth - 0.2) * mouse.y / threshold.y;
+  float displacementx = vUv.x + (depth - 0.1) * mouse.x / threshold.x;
+  float displacementy = vUv.y + (depth - 0.1) * mouse.y / threshold.y;
   vec2 fake3d = vec2(displacementx, displacementy);
   gl_FragColor = texture2D(image0,mirrored(fake3d));
 }
