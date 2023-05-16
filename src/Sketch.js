@@ -215,10 +215,10 @@ const Sketch = ({ container, imageOriginal, imageDepth, vth, hth, respondTo, rev
     const currentTime = (now - startTime) / 1000
     uTime.set(currentTime)
     // inertia
-    const nMX = mouseX + ((mouseTargetX - mouseX) * 0.05) || 0
-    const nMY = mouseY + ((mouseTargetY - mouseY) * 0.05) || 0
-    mouseX = nMX
-    mouseY = nMY
+    const nMX = mouseX + ((mouseTargetX - mouseX) * 0.05)
+    const nMY = mouseY + ((mouseTargetY - mouseY) * 0.05)
+    mouseX = nMX || 0
+    mouseY = nMY || 0
     uMouse.set(nMX, nMY)
     
     // render
