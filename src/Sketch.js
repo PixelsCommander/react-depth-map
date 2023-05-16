@@ -73,7 +73,7 @@ const Sketch = ({ container, imageOriginal, imageDepth, vth, hth, respondTo, rev
 
   const addShader = (source, type) => {
     const shader = gl.createShader(type)
-    gl.clearColor(0.5, 0, 0, 0.5)
+    gl.clearColor(0.0, 0, 0, 0.0)
     gl.clear(gl.COLOR_BUFFER_BIT)
     gl.shaderSource(shader, source)
     gl.compileShader(shader)
