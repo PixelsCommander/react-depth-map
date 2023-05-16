@@ -109,6 +109,7 @@ const Sketch = ({ container, imageOriginal, imageDepth, vth, hth, respondTo, rev
     gl.useProgram(program)
     uResolution = new Uniform('resolution', '4f', program, gl)
     uMouse = new Uniform('mouse', '2f', program, gl)
+    uMouse.set(0, 0)
     uTime = new Uniform('time', '1f', program, gl)
     uRatio = new Uniform('pixelRatio', '1f', program, gl)
     uThreshold = new Uniform('threshold', '2f', program, gl)
@@ -214,8 +215,8 @@ const Sketch = ({ container, imageOriginal, imageDepth, vth, hth, respondTo, rev
     const currentTime = (now - startTime) / 1000
     uTime.set(currentTime)
     // inertia
-    const nMX = mouseX + ((mouseTargetX - mouseX) * 0.05)
-    const nMY = mouseY + ((mouseTargetY - mouseY) * 0.05)
+    const nMX = mouseX + ((mouseTargetX - mouseX) * 0.05) || 0
+    const nMY = mouseY + ((mouseTargetY - mouseY) * 0.05) || 0
     mouseX = nMX
     mouseY = nMY
     uMouse.set(nMX, nMY)
