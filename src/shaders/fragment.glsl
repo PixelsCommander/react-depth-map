@@ -22,7 +22,8 @@ void main() {
   vec2 vUv = (uv - vec2(0.5))*resolution.zw + vec2(0.5);
   vUv.y = 1. - vUv.y;
   vec4 tex1 = texture2D(image1,mirrored(vUv));
-  float depth = tex1.r;
+  float depth = tex1.g;
+
   float displacementx = vUv.x + (depth - 0.05) * mouse.x / threshold.x;
   float displacementy = vUv.y + (depth - 0.05) * mouse.y / threshold.y;
   vec2 fake3d = vec2(displacementx, displacementy);
